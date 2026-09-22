@@ -1,10 +1,10 @@
 # API Data Ingestion Pipeline
 
-A small end-to-end pipeline that pulls user data from a public REST API, cleans and reshapes it with pandas, and loads it into a SQL Server database — then verifies the load by querying it back.
+A small end-to-end pipeline that pulls user data from a public REST API, cleans and reshapes it with pandas, and loads it into a SQL Server database, then verifies the load by querying it back.
 
 ## What it does
 
-1. **Extract** — Calls the [JSONPlaceholder](https://jsonplaceholder.typicode.com/users) API and pulls a nested JSON response of user records.
+1. **Extract** - Calls the [JSONPlaceholder](https://jsonplaceholder.typicode.com/users) API and pulls a nested JSON response of user records.
 2. **Transform**
    - Flattens the nested JSON (`address`, `company` sub-objects) into a tabular structure with `pandas.json_normalize`.
    - Selects only the relevant columns for downstream use (`id`, `name`, `username`, `email`, `city`, `postal_code`, `phone`, `website`, `company_name`).
@@ -18,7 +18,7 @@ A small end-to-end pipeline that pulls user data from a public REST API, cleans 
 
 ## Tech stack
 
-- **Python** — `requests`, `pandas`, `sqlalchemy`, `pyodbc`
+- **Python** - `requests`, `pandas`, `sqlalchemy`, `pyodbc`
 - **SQL Server** (local instance, ODBC Driver 17)
 - **Jupyter Notebook** for development
 
